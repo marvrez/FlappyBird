@@ -9,6 +9,8 @@ import java.util.Random;
  * Created by marvinreza on 05.01.2017.
  */
 public class Tube {
+    public static final int TUBE_WIDTH = 52;
+
     private Texture topTube, bottomTube;
     private Vector2 posTopTube, posBotTube;
     private Random rand;
@@ -40,5 +42,11 @@ public class Tube {
 
     public Vector2 getPosBotTube() {
         return posBotTube;
+    }
+
+    public void reposition(float x)
+    {
+        posTopTube.set(x,rand.nextInt(FLUCTUATION) + TUBE_GAP + LOWEST_OPENING);
+        posBotTube.set(x,posTopTube.y - TUBE_GAP - bottomTube.getHeight());
     }
 }
