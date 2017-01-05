@@ -58,7 +58,6 @@ public class PlayState extends State {
         for(int i = 0; i < tubes.size(); i++) {
             Tube tube = tubes.get(i);
             if(cam.position.x - (cam.viewportWidth / 2) > tube.getPosTopTube().x + tube.getTopTube().getWidth()) {
-
                 tube.reposition(tube.getPosTopTube().x + ((Tube.TUBE_WIDTH + TUBE_SPACING) * TUBE_COUNT));
             }
 
@@ -67,12 +66,14 @@ public class PlayState extends State {
         }
         if(bird.getPosition().y  <= ground.getHeight() + GROUND_Y_OFFSET)
             gsm.set(new PlayState(gsm));
+
         cam.update();
     }
 
     @Override
     public void render(SpriteBatch sb) {
         sb.setProjectionMatrix(cam.combined);
+
         sb.begin();
         sb.draw(background, cam.position.x - (cam.viewportWidth / 2),0);
         sb.draw(bird.getTexture(), bird.getPosition().x, bird.getPosition().y);
@@ -84,6 +85,7 @@ public class PlayState extends State {
 
         sb.draw(ground, groundPos1.x, groundPos1.y);
         sb.draw(ground, groundPos2.x, groundPos2.y);
+
         sb.end();
     }
 
