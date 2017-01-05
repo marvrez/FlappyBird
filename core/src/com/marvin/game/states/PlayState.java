@@ -30,7 +30,7 @@ public class PlayState extends State {
 
         tubes = new ArrayList<Tube>();
 
-        for(int i = 1; i < TUBE_COUNT; i++) {
+        for(int i = 1; i <= TUBE_COUNT; i++) {
             tubes.add(new Tube(i * (TUBE_SPACING + Tube.TUBE_WIDTH) ));
         }
     }
