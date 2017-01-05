@@ -28,7 +28,7 @@ public class PlayState extends State {
 
     public PlayState(GameStateManager gsm) {
         super(gsm);
-        bird = new Bird(50,300);
+        bird = new Bird(40,200);
         cam.setToOrtho(false, FlappyBird.WIDTH / 2,FlappyBird.HEIGHT / 2);
         background = new Texture("bg.png");
         ground = new Texture("ground.png");
